@@ -2,7 +2,7 @@
     <head> 
         {% if title %}
         <title>{{ title }} Freespeak </title>
-        {% else %}}
+        {% else %}
         <title>Speak Easy</title>
         {% endif %}
     </head>
@@ -13,7 +13,8 @@
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Login</a>
             {% else %}
-            <a href="{{ url_for('logout) }}">Logout</a>
+            <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
             {% endif %}
         </div>
         <hr>
