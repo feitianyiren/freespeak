@@ -16,6 +16,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
+mail = Mail(app)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
@@ -30,8 +31,8 @@ if not app.debug:
             fromaddr='no-reply@' + app.config['MAIL_SERVER'],
             toaddrs=app.config['ADMINS'], subject='Freespeak Failure',
             credentials=auth, secure=secure)
-            mail_handler.setLevel(logging.ERROR)
-            app.logger.addHandler(mail_handler)
+        mail_handler.setLevel(logging.ERROR)
+        app.logger.addHandler(mail_handler)
 
     if not os.path.exists('logs'):
         os.mkdir('logs')
@@ -40,7 +41,7 @@ if not app.debug:
         '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
     file_handler.setLevel(logging.INFO)
     app.logger.addHandler(file_handler)
-    app.logger.setLegvel(logging.INFO)
+    app.logger.setLevel(logging.INFO)
     app.logger.info('Freespeak startup')
 
 from app import routes, models, errors

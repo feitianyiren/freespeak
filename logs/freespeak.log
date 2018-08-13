@@ -1,0 +1,36 @@
+2018-08-12 21:35:36,632 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 90, in user
+    return render_template('user.html', user=user, posts=posts, next_url=next_url, prev_url=prev_url)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 28, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2018-08-12 21:40:23,021 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
