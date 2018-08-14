@@ -1,32 +1,4 @@
-2018-08-07 21:27:38,997 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-07 21:27:51,753 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-07 21:28:13,160 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-07 22:05:05,057 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-07 22:05:20,841 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-07 22:05:50,295 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-08 18:20:57,558 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-08 18:21:01,322 ERROR: Exception on / [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 32, in index
-    posts = current_user.followed_posts().all()
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\models.py", line 63, in followed_posts
-    followers, (followers.c.followed_id == Post.user_id)).filter(
-NameError: name 'followers' is not defined
-2018-08-08 18:23:12,136 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
+2018-08-08 18:28:48,581 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()

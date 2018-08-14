@@ -1,4 +1,4 @@
-2018-08-08 18:28:58,373 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
+2018-08-12 21:33:25,387 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,78 +14,94 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 81, in user
-    return render_template('user.html', user=user, posts=posts)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 90, in user
+    return render_template('user.html', user=user, posts=posts, next_url=next_url, prev_url=prev_url)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 20, in template
-    <p><a href="{{ url_for('follow', username=user.username') }}">Follow</a></p>
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 213, in parse_if
-    'name:endif'))
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 875, in subparse
-    add_data(self.parse_tuple(with_condexpr=True))
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 620, in parse_tuple
-    args.append(parse())
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 432, in parse_expression
-    return self.parse_condexpr()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 437, in parse_condexpr
-    expr1 = self.parse_or()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 450, in parse_or
-    left = self.parse_and()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 459, in parse_and
-    left = self.parse_not()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 470, in parse_not
-    return self.parse_compare()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 474, in parse_compare
-    expr = self.parse_math1()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 496, in parse_math1
-    left = self.parse_concat()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 507, in parse_concat
-    args = [self.parse_math2()]
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 517, in parse_math2
-    left = self.parse_pow()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 528, in parse_pow
-    left = self.parse_unary()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 547, in parse_unary
-    node = self.parse_postfix(node)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 676, in parse_postfix
-    node = self.parse_call(node)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\parser.py", line 767, in parse_call
-    self.stream.expect('comma')
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\lexer.py", line 384, in expect
-    self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'string'
-2018-08-08 18:31:32,077 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-08 18:46:44,448 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 28, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2018-08-12 21:33:29,644 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
+2018-08-12 21:33:30,732 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 90, in user
+    return render_template('user.html', user=user, posts=posts, next_url=next_url, prev_url=prev_url)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 28, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2018-08-12 21:33:32,977 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 90, in user
+    return render_template('user.html', user=user, posts=posts, next_url=next_url, prev_url=prev_url)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 28, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2018-08-12 21:35:24,308 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]

@@ -1,4 +1,4 @@
-2018-08-12 21:33:25,387 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
+2018-08-12 23:02:06,815 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 90, in user
-    return render_template('user.html', user=user, posts=posts, next_url=next_url, prev_url=prev_url)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 92, in user
+    return render_template('user.html', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 117, in _render
@@ -26,15 +26,31 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 24, in template
+    {% block app_content %}{% endblock %}
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
   File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 28, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2018-08-12 21:33:29,644 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
-2018-08-12 21:33:30,732 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 24, in template
+    {% block app_content %}{% endblock %}
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 543, in _generate
+    optimized=self.optimized)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\compiler.py", line 82, in generate
+    generator.visit(node)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\compiler.py", line 718, in visit_Template
+    self.fail('block %r defined twice' % block.name, block.lineno)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\compiler.py", line 315, in fail
+    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
+2018-08-12 23:06:43,540 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:48]
+2018-08-12 23:06:46,061 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -50,8 +66,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 90, in user
-    return render_template('user.html', user=user, posts=posts, next_url=next_url, prev_url=prev_url)
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 92, in user
+    return render_template('user.html', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 117, in _render
@@ -62,46 +78,27 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 31, in top-level template code
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 83, in template
     {% block content %}{% endblock %}
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 28, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2018-08-12 21:33:32,977 ERROR: Exception on /user/test [GET] [in c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\routes.py", line 90, in user
-    return render_template('user.html', user=user, posts=posts, next_url=next_url, prev_url=prev_url)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 31, in top-level template code
+  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\base.html", line 83, in template
     {% block content %}{% endblock %}
-  File "C:\Users\Raiden\Documents\Python Projects\freespeak\app\templates\user.html", line 28, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2018-08-12 21:35:24,308 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:44]
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\environment.py", line 543, in _generate
+    optimized=self.optimized)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\compiler.py", line 82, in generate
+    generator.visit(node)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\compiler.py", line 718, in visit_Template
+    self.fail('block %r defined twice' % block.name, block.lineno)
+  File "c:\users\raiden\documents\python projects\freespeak\venv\lib\site-packages\jinja2\compiler.py", line 315, in fail
+    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateAssertionError: block 'content' defined twice
+2018-08-13 21:43:05,954 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:48]

@@ -3,9 +3,10 @@
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
-from app import db
-from app import login
+from app import db, login, app
 from hashlib import md5
+from time import time
+import jwt
 
 # The followers table has no associated class because it is an auxilary database table
 # it links two separate columns to the same entity in the users database, id
@@ -64,6 +65,19 @@ class User(UserMixin, db.Model):
                 followers.c.follower_id == self.id)
         own = Post.query.filter_by(user_id=self.id)
         return followed.union(own).order_by(Post.timestamp.desc())
+    
+    def get_reset_password_token(self, expires_in=1800):
+        return jwt.encode({'reset_password': self.id, 'exp': time() + expires_in},
+        app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+
+    @staticmethod
+    def verify_password_reset_token(token):
+        try:
+            id = jwt.decode(token, app.config['SECRET-KEY'],
+                algorithms=['HS256'])['reset_password']
+        except:
+            return
+        return User.query.get(id)
 
 # This class defines each post within the database schema
 class Post(db.Model):
