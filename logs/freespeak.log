@@ -52,3 +52,6 @@ jinja2.exceptions.UndefinedError: 'moment' is undefined
 2018-08-14 22:50:02,446 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:53]
 2018-08-14 22:51:33,657 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:53]
 2018-08-14 22:51:59,559 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:53]
+2018-08-14 22:56:04,208 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:53]
+2018-08-14 22:56:27,668 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:53]
+2018-08-14 22:56:39,569 INFO: Freespeak startup [in C:\Users\Raiden\Documents\Python Projects\freespeak\app\__init__.py:53]
