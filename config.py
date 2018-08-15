@@ -17,4 +17,7 @@ class Config(object):
     ADMINS = ['connor.willhelm@gmail.com']
 
     #Number of posts for pagination
-    POSTS_PER_PAGE = 3
+    POSTS_PER_PAGE = 20
+
+    #Language Support
+    LANGUAGES = ['en', 'es']
